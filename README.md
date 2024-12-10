@@ -36,12 +36,13 @@ Ce projet est une démonstration de l'utilisation de l'API de Spotify pour récu
 
 1. Connectez-vous à votre compte Spotify et accédez au [Tableau de bord des développeurs Spotify](https://developer.spotify.com/dashboard).
 
-2. Cliquez sur "Create App" et remplissez les informations requises.
+2. Cliquez sur "Create App" et remplissez les informations requises. Utilisez `http://localhost:5173/callback` (port 5173, utilisé par défaut par Vite) pour Redirect Uri(s)
+
 ![page to create an app](public/images/create_an_app.png)
 
 3. Une fois l'application créée, vous verrez votre `Client ID` et `Client Secret`. Copiez-les dans votre fichier `.env`.
 
-4. Ajoutez l'URL de redirection (Redirect URI) dans les paramètres de votre application Spotify. Utilisez `http://localhost:5173/callback` (port 5173, utilisé par défaut par Vite) comme URI de redirection.
+4. Ajoutez l'URL de redirection (Redirect URI) dans les paramètres de votre application Spotify, si l'uri n'est pas la bonne. Utilisez `http://localhost:5173/callback` (port 5173, utilisé par défaut par Vite) comme URI de redirection.
 
 ![Spotify Dashboard](public/images/spotify_app_settings.png)
 
