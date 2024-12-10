@@ -1,5 +1,5 @@
-const clientId = import.meta.env.CLIENT_ID;
-const redirectUri = import.meta.env.REDIRECT_URI;
+const clientId = import.meta.env.VITE_CLIENT_ID;
+const redirectUri = import.meta.env.VITE_REDIRECT_URI;
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 
