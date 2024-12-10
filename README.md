@@ -28,9 +28,8 @@ Ce projet est une démonstration de l'utilisation de l'API de Spotify pour récu
     ```
 4. Créez un fichier `.env.local` à la racine du projet et ajoutez vos informations d'identification Spotify :
     ```
-    CLIENT_ID=your_client_id
-    CLIENT_SECRET=your_client_secret
-    REDIRECT_URI=your_redirect_uri
+    VITE_CLIENT_ID=your_client_id
+    VITE_REDIRECT_URI=your_redirect_uri
     ```
 
 ## Obtention du Client ID et du Redirect URI
@@ -38,7 +37,7 @@ Ce projet est une démonstration de l'utilisation de l'API de Spotify pour récu
 1. Connectez-vous à votre compte Spotify et accédez au [Tableau de bord des développeurs Spotify](https://developer.spotify.com/dashboard).
 
 2. Cliquez sur "Create App" et remplissez les informations requises.
-![page to create an app](https://github.com/fabien-design/spotify-profile-API/tree/master/public/images/create_an_app.png)
+![page to create an app](public/images/create_an_app.png)
 
 3. Une fois l'application créée, vous verrez votre `Client ID` et `Client Secret`. Copiez-les dans votre fichier `.env`.
 
