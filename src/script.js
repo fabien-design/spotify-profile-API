@@ -70,13 +70,13 @@ export async function getToken(clientId, code) {
 
     if (
         accessToken && 
-        accessToken !== undefined &&
+        accessToken !== 'undefined' &&
         expiresAt &&
         Date.now() < parseInt(expiresAt)
     ) {
         return accessToken;
     }
-    if (refreshToken && accessToken && accessToken !== undefined) {
+    if (refreshToken && accessToken && accessToken !== 'undefined') {
         console.log("Refreshing access token");
         return await refreshAccessToken(clientId, refreshToken);
     }
@@ -263,23 +263,28 @@ function initSpotifyIframe() {
             uri: 'spotify:episode:2HOo5H4Wn2SNjOxvvXB9a0'
         };
         const callback = (EmbedController) => {
-            setInterval(() => {
+            const playBtnsHandled = new WeakSet();
+
+            const attachEventHandlers = () => {
                 const playBtns = document.querySelectorAll('.track .play-btn');
-                
+
                 playBtns.forEach((btn) => {
-                    const clickHandler = async () => {
-                        EmbedController.loadUri(btn.dataset.spotifyId);
-                    };
-    
-                    // Remove existing event listener if any
-                    btn.removeEventListener('click', clickHandler);
-                    // Add new event listener
-                    btn.addEventListener('click', clickHandler);
+                    if (!playBtnsHandled.has(btn)) {
+                        btn.addEventListener('click', async (event) => {
+                            EmbedController.loadUri(event.currentTarget.dataset.spotifyId);
+                        });
+                        playBtnsHandled.add(btn);
+                    }
                 });
-                if (playBtns.length > 0) {
-                    clearInterval();
-                }
-            }, 500);
+            };
+            const observer = new MutationObserver(attachEventHandlers);
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+
+            // Gestion initiale
+            attachEventHandlers();
         };
         IFrameAPI.createController(element, options, callback);
     };
