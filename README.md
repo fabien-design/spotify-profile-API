@@ -4,8 +4,6 @@ Ce projet est une démonstration de l'utilisation de l'API de Spotify pour récu
 
 ## Prérequis
 
-- PHP 7.4 ou supérieur
-- Composer
 - npm
 - Un compte spotify
 
@@ -17,16 +15,12 @@ Ce projet est une démonstration de l'utilisation de l'API de Spotify pour récu
     git clone https://github.com/fabien-design/spotify-profile-API.git
     cd spotify-profile-API
     ```
-
-2. Installez les dépendances avec Composer :
-    ```bash
-    composer install
-    ```
-3. Installer les dépendances node:
+    
+2. Installer les dépendances node:
     ```bash
     npm install
     ```
-4. Créez un fichier `.env.local` à la racine du projet et ajoutez vos informations d'identification Spotify :
+3. Créez un fichier `.env.local` à la racine du projet et ajoutez vos informations d'identification Spotify :
     ```
     VITE_CLIENT_ID=your_client_id
     VITE_REDIRECT_URI=your_redirect_uri
