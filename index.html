@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>My Spotify Profile</title>
+        <!-- <script src="src/script.js" type="module"></script> -->
+        <link rel="stylesheet" href="src/style.css" />
+    </head>
+    <body>
+        <h1>Display your Spotify profile data</h1>
+
+        <section id="profile">
+            <div class="profile-card">
+                <h2>Logged in as <span id="displayName"></span></h2>
+                <div class="profile-container">
+                    <span id="avatar"></span>
+                    <ul>
+                        <li>User ID: <span id="id"></span></li>
+                        <li>Email: <span id="email"></span></li>
+                        <li>Link: <a id="url" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="artists"></section>
+        <section id="tracks">
+            <div class="search-container">
+                <form id="search-form">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Rechercher une musique..."
+                    />
+                    <button type="submit" id="search-button">Rechercher</button>
+                </form>
+                <div class="searched-result"></div>
+            </div>
+        </section>
+        <section id="play-track">
+            <h2>Play a track</h2>
+            <div id="embed-iframe"></div>
+
+        </section>
+        <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+
+    </body>
+    <script src="src/script.js" type="module"></script>
+</html>
